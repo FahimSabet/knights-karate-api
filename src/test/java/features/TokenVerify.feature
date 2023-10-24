@@ -1,8 +1,10 @@
+@Regression
+
 Feature: Security token verify API calls
 
 
   Background: Setup tests
-    Given url "https://qa.insurance-api.tekschool-students.com"
+    Given url BASE_URL
 
   Scenario: Send valid request to api/token/verify
 
@@ -44,6 +46,9 @@ Feature: Security token verify API calls
         Then print response
         And assert response.errorMessage == "Wrong Username send along with Token"
         And assert response.httpStatus == "BAD_REQUEST"
+
+
+
 
 
 

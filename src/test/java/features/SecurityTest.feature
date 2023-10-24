@@ -1,8 +1,10 @@
+@Smoke
+
 Feature: Security Token API Calls
 
   Scenario: Send request to API
 
-    Given url "https://qa.insurance-api.tekschool-students.com"
+    Given url BASE_URL
     And path "/api/token"
     And request {"username": "supervisor","password": "tek_supervisor"}
     When method post
@@ -15,7 +17,7 @@ Feature: Security Token API Calls
 #    And response contain message user "<TestUser>" not found
 
   Scenario Outline: Send request to api token with wrong username
-    Given url "https://qa.insurance-api.tekschool-students.com"
+    Given url BASE_URL
     And path "/api/token"
     And request
     """
